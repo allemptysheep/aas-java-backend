@@ -1,0 +1,46 @@
+# @format
+
+# server config
+server:
+    servlet:
+        context-path: /
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+            force-response: true
+        session:
+            timeout: 1h
+#  tomcat:
+#    additional-tld-skip-patterns: "*.jar"
+
+# spring config
+spring:
+    #  profiles:
+    #    active: prod
+    application:
+        name: shinhan-aas-server
+    mvc:
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+    thymeleaf:
+        enabled: false
+    messages:
+        basename: classpath:/i18n/message/message,classpath:/i18n/exception/exception
+        encoding: UTF-8
+    output:
+        ansi:
+            enabled: always
+    config:
+        activate:
+            on-profile: ${spring.profiles.active}
+    main:
+        allow-bean-definition-overriding: true
+        allow-circular-references: true
+
+# JWT config
+jwt:
+    secret: shinhan-aas-server-secret-key-must-be-at-least-256-bits-long-for-hs256
+    access-token-validity: 3600000 # 1시간 (ms)
+    refresh-token-validity: 604800000 # 7일 (ms)

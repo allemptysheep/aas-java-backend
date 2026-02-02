@@ -1,0 +1,41 @@
+# @format
+
+# =============================================
+# dev 프로필: Oracle (로컬=localhost, Docker=같은 네트워크의 Oracle 컨테이너 이름)
+# Docker에서 aas-oracle 컨테이너 사용 시: -e SPRING_DATASOURCE_URL=jdbc:oracle:thin:@aas-oracle:1521:ORCL
+# =============================================
+
+spring:
+    config:
+        activate:
+            on-profile: dev
+    datasource:
+        auto-commit: false
+        connection-timeout: 30000
+        maximum-pool-size: 20
+        max-lifetime: 2000000
+        pool-name: hikari-cp-sboot-shinhan-test
+        read-only: false
+        minimum-idle: 3
+        connection-init-sql: SELECT 1 FROM DUAL
+        url: jdbc:oracle:thin:@aas-oracle:1521:ORCL
+        driver-class-name: oracle.jdbc.OracleDriver
+        username: AAS
+        password: 1234
+    jpa:
+        hibernate:
+            ddl-auto: validate
+        show-sql: false
+        properties:
+            "[hibernate.dialect]": org.hibernate.dialect.OracleDialect
+            "[hibernate.format_sql]": true
+
+server:
+    address: 0.0.0.0
+    port: 6443
+    servlet:
+        multipart:
+            enabled: true
+            max-file-size: 200MB
+            max-request-size: 500MB
+            # location: /opt/_was_file_and_logs/_files/_tomcat_mobile
