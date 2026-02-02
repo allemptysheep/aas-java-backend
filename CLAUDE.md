@@ -1,10 +1,10 @@
 <!-- @format -->
 
-# Shinhan AAS Server - 프로젝트 지침
+# JAVA AAS Server - 프로젝트 지침
 
 ## 프로젝트 개요
 
-신한 Asset Administration Shell (AAS) 서버 프로젝트입니다.
+Asset Administration Shell (AAS) 서버 프로젝트입니다.
 Eclipse BaSyx Web UI와 연동하여 AAS 데이터를 관리합니다.
 
 ## 기술 스택

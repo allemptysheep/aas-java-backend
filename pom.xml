@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aas</groupId>
-	<artifactId>shinhan</artifactId>
+	<artifactId>aas</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<name>shinhan-aas-server</name>
 	<description>Demo project for Spring Boot Shinhan AAS</description>
